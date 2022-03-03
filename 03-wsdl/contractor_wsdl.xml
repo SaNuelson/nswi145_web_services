@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions 
+    xmlns="http://schemas.xmlsoap.org/wsdl/" 
+    xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" 
+    xmlns:tns="http://interfaces/" 
+    targetNamespace="http://interfaces/">
+
+    <types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://interfaces/" elementFormDefault="qualified">
+        <!-- I need to reiterate targetNamespace in <xs:schema>, not sure why if it's set already in definitions? -->
+            <xs:element name="GetByJobType" type="tns:GetByJobTypeType">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="jobType" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GetByJobTypeResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="freelancerId" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </types>
+
+    <message name="FlcsByJobMsg">
+        <part name="FlcsByJobMsgPart" element="tns:GetByJobType"></part>
+    </message>
+    <message name="FlcsByJobResMsg">
+        <part name="FlcsByJobResMsgPart" element="tns:GetByJobTypeResponse"></part>
+    </message>
+
+    <portType name="FlcsPort">
+        <operation name="FlcsByJobOp">
+            <input message="tns:FlcsByJobMsg" />
+            <output message="tns:FlcsByJobResMsg" />
+        </operation>
+    </portType>
+
+    <binding name="FlcsBinding" type="tns:FlcsPort">
+        <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+        <operation name="FlcsByJobOp">
+            <wsdlsoap:operation soapAction="" />
+                <input>
+                    <wsdlsoap:body use="literal" />
+                </input>
+                <output>
+                    <wsdlsoap:body use="literal" />
+                </output>
+        </operation>
+    </binding>
+
+    <service name="FlcsService">
+        <port binding="tns:FlcsBinding" name="FlcsDemo">
+            <wsdlsoap:address location="http://127.0.0.1:8000/freelancers" />
+        </port>
+    </service>
+
+</definitions>
