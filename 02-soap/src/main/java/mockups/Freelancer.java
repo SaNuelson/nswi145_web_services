@@ -24,8 +24,8 @@ public class Freelancer {
         return this.name;
     }
 
-    public String[] getInfo() {
-        return new String[] {this.name, this.jobTypes.toString()};
+    public FreelancerInfo getInfo() {
+        return new FreelancerInfo(this.id.toString(), this.name, this.jobTypes);
     }
 
     public UUID getId() {

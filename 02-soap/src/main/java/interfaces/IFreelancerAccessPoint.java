@@ -1,11 +1,25 @@
 package interfaces;
 
-@javax.jws.WebService
+import mockups.FreelancerInfo;
+
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
+import javax.jws.WebResult;
+import javax.jws.WebService;
+import java.io.Serializable;
+
+@WebService
 public interface IFreelancerAccessPoint {
 
-    @javax.jws.WebMethod
-    public String[] GetByJobType(String jobType);
+    @WebMethod
+    @WebResult(name="freelancerId")
+    public String[] GetByJobType(
+            @WebParam(name="jobType") String jobType
+    );
 
-    @javax.jws.WebMethod
-    public String[] GetFreelancerInfo(String freelancerId);
+    @WebMethod
+    @WebResult(name="freelancerInfo")
+    public FreelancerInfo GetFreelancerInfo(
+            @WebParam(name="freelancerId") String freelancerId
+    );
 }

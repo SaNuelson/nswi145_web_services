@@ -1,14 +1,27 @@
 package interfaces;
 
-@javax.jws.WebService
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
+import javax.jws.WebResult;
+import javax.jws.WebService;
+
+@WebService
 public interface IContractAccessPoint {
 
-    @javax.jws.WebMethod
-    public boolean AssignFreelancer(String contractId, String freelancerId);
+    @WebMethod
+    @WebResult(name="success")
+    public boolean AssignFreelancer(
+            @WebParam(name="contractId") String contractId,
+            @WebParam(name="freelancerId") String freelancerId);
 
-    @javax.jws.WebMethod
-    public boolean DismissFreelancer(String contractId);
+    @WebMethod
+    @WebResult(name="success")
+    public boolean DismissFreelancer(
+            @WebParam(name="contractId") String contractId);
 
-    @javax.jws.WebMethod
-    public boolean SetState(String contractId, String newState);
+    @WebMethod
+    @WebResult(name="success")
+    public boolean SetState(
+            @WebParam(name="contractId") String contractId,
+            @WebParam(name="newState") String newState);
 }

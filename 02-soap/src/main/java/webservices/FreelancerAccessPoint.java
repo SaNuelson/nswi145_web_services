@@ -2,7 +2,7 @@ package webservices;
 
 import interfaces.IDatabaseWrapper;
 import interfaces.IFreelancerAccessPoint;
-import mockups.Freelancer;
+import mockups.FreelancerInfo;
 
 import javax.jws.WebService;
 import java.util.*;
@@ -25,15 +25,16 @@ public class FreelancerAccessPoint implements IFreelancerAccessPoint {
     }
 
     @Override
-    public String[] GetFreelancerInfo(String freelancerId) {
-        System.out.printf("FreelancerAccessPoint.GetFreelancerInfo(%s)%n", freelancerId);
+    public FreelancerInfo GetFreelancerInfo(String freelancerId) {
+        System.out.printf("FreelancerAccessPoint.GetFreelancerInfoTest(%s)%n", freelancerId);
         var maybeFreelancer = db.TryGetFreelancerById(UUID.fromString(freelancerId));
         if (maybeFreelancer.isEmpty()) {
             System.out.println(".. freelancer not found, rejecting...");
-            return new String[0];
+            return FreelancerInfo.Empty();
         }
         var freelancerInfo = maybeFreelancer.get().getInfo();
-        System.out.printf(".. freelancer with info %s found.%n", Arrays.toString(freelancerInfo));
+        System.out.printf(".. freelancer found.%n");
         return freelancerInfo;
     }
 }
+
