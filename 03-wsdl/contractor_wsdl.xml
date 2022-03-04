@@ -6,31 +6,50 @@
     targetNamespace="http://interfaces/">
 
     <types>
-        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://interfaces/">
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://interfaces/" targetNamespace="http://interfaces/">
         <!-- skip elementFormDefault if namespace not explicitly defined in Java -->
         <!-- I need to reiterate targetNamespace in <xs:schema>, not sure why if it's set already in definitions? -->
-            <xs:element name="GetByJobType">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="jobType" type="xs:string" minOccurs="1" maxOccurs="1" />
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="GetByJobTypeResponse">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="freelancerId" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
+            <xs:element name="GetByJobType" type="tns:singleJobType" />
+            <xs:element name="GetByJobTypeResponse" type="tns:listFlcIdType" />
+            <xs:element name="GetFreelancerInfo" type="tns:singleFlcIdType" />
+            <xs:element name="GetFreelancerInfoResponse" type="tns:flcInfoType" />
+
+            <xs:complexType name="singleJobType">
+                <xs:sequence>
+                    <xs:element name="jobType" type="xs:string" minOccurs="1" maxOccurs="1" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="singleFlcIdType">
+                <xs:sequence>
+                    <xs:element name="freelancerId" type="xs:string" minOccurs="1" maxOccurs="1" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="listFlcIdType">
+                <xs:sequence>
+                    <xs:element name="freelancerId" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="flcInfoType">
+                <xs:all minOccurs="1" maxOccurs="1">
+                    <xs:element name="id" type="xs:string" />
+                    <xs:element name="name" type="xs:string" />
+                </xs:all>
+                <xs:element name="jobType" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+            </xs:complexType>
         </xs:schema>
     </types>
 
     <message name="FlcsByJobMsg">
-        <part name="FlcsByJobMsgPart" element="tns:GetByJobType"></part>
+        <part name="FlcsByJobMsgPart" element="tns:GetByJobType" />
     </message>
     <message name="FlcsByJobResMsg">
-        <part name="FlcsByJobResMsgPart" element="tns:GetByJobTypeResponse"></part>
+        <part name="FlcsByJobResMsgPart" element="tns:GetByJobTypeResponse" />
+    </message>
+    <message name="FlcInfoMsg">
+        <part name="FlcInfoMsgPart" element="tns:GetFreelancerInfo" />
+    </message>
+    <message name="FlcInfoResMsg">
+        <part name="FlcInfoResMsgPart" element="tns:GetFreelancerInfoResponse" />
     </message>
 
     <portType name="FlcsPort">
@@ -38,11 +57,24 @@
             <input message="tns:FlcsByJobMsg" />
             <output message="tns:FlcsByJobResMsg" />
         </operation>
+        <operation name="FlcInfoOp">
+            <input message="tns:FlcInfoMsg" />
+            <output message="tns:FlcInfoResMsg" />
+        </operation>
     </portType>
 
     <binding name="FlcsBinding" type="tns:FlcsPort">
         <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
         <operation name="FlcsByJobOp">
+            <wsdlsoap:operation soapAction="" />
+                <input>
+                    <wsdlsoap:body use="literal" />
+                </input>
+                <output>
+                    <wsdlsoap:body use="literal" />
+                </output>
+        </operation>
+        <operation name="FlcInfoOp">
             <wsdlsoap:operation soapAction="" />
                 <input>
                     <wsdlsoap:body use="literal" />
@@ -59,4 +91,4 @@
         </port>
     </service>
 
-</definitions>
+</definitions> 
