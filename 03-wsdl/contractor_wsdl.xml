@@ -6,9 +6,10 @@
     targetNamespace="http://interfaces/">
 
     <types>
-        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://interfaces/" elementFormDefault="qualified">
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://interfaces/">
+        <!-- skip elementFormDefault if namespace not explicitly defined in Java -->
         <!-- I need to reiterate targetNamespace in <xs:schema>, not sure why if it's set already in definitions? -->
-            <xs:element name="GetByJobType" type="tns:GetByJobTypeType">
+            <xs:element name="GetByJobType">
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element name="jobType" type="xs:string" minOccurs="1" maxOccurs="1" />
