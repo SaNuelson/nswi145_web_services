@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<definitions 
-    xmlns="http://schemas.xmlsoap.org/wsdl/" 
-    xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" 
-    xmlns:tns="http://interfaces/" 
-    targetNamespace="http://interfaces/">
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://interfaces/" targetNamespace="http://interfaces/">
 
     <types>
         <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://interfaces/" targetNamespace="http://interfaces/">
-        <!-- skip elementFormDefault if namespace not explicitly defined in Java -->
-        <!-- I need to reiterate targetNamespace in <xs:schema>, not sure why if it's set already in definitions? -->
+            <!-- skip elementFormDefault if namespace not explicitly defined in Java -->
+            <!-- I need to reiterate targetNamespace in <xs:schema>, not sure why if it's set already in definitions? -->
+
+            <!-- Freelancer interface message elements -->
             <xs:element name="GetByJobType" type="tns:singleJobType" />
             <xs:element name="GetByJobTypeResponse" type="tns:listFlcIdType" />
             <xs:element name="GetFreelancerInfo" type="tns:singleFlcIdType" />
             <xs:element name="GetFreelancerInfoResponse" type="tns:flcInfoType" />
 
+            <!-- Contract interface message elements -->
+            <xs:element name="AssignFreelancer" type="tns:contractFreelancerType" />
+            <xs:element name="AssignFreelancerResponse" type="tns:successType" />
+            <xs:element name="DismissFreelancer" type="tns:contractType" />
+            <xs:element name="DismissFreelancerResponse" type="tns:successType" />
+            <xs:element name="SetState" type="tns:contractStateType" />
+            <xs:element name="SetStateResponse" type="tns:successType" />
+
+            <!-- Freelancer interface message definitions -->
             <xs:complexType name="singleJobType">
                 <xs:sequence>
                     <xs:element name="jobType" type="xs:string" minOccurs="1" maxOccurs="1" />
@@ -36,9 +43,34 @@
                 </xs:all>
                 <xs:element name="jobType" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
             </xs:complexType>
+
+            <!-- Contract interface message definitions -->
+            <xs:complexType name="contractFreelancerType">
+                <xs:sequence>
+                    <xs:element name="contractId" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="freelancerId" type="xs:string" minOccurs="1" maxOccurs="1" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="contractStateType">
+                <xs:sequence>
+                    <xs:element name="contractId" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="newState" type="xs:string" minOccurs="1" maxOccurs="1" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="contractType">
+                <xs:sequence>
+                    <xs:element name="contractId" type="xs:string" minOccurs="1" maxOccurs="1" />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="successType">
+                <xs:sequence>
+                    <xs:element name="success" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+                </xs:sequence>
+            </xs:complexType>
         </xs:schema>
     </types>
 
+    <!-- Freelancer message definitions -->
     <message name="FlcsByJobMsg">
         <part name="FlcsByJobMsgPart" element="tns:GetByJobType" />
     </message>
@@ -52,6 +84,27 @@
         <part name="FlcInfoResMsgPart" element="tns:GetFreelancerInfoResponse" />
     </message>
 
+    <!-- Contract message definitions -->
+    <message name="AssignFlcMsg">
+        <part name="AssignFlcMsgPart" element="tns:AssignFreelancer" />
+    </message>
+    <message name="AssignFlcResMsg">
+        <part name="AssignFlcResMsgPart" element="tns:AssignFreelancerResponse" />
+    </message>
+    <message name="DismissFlcMsg">
+        <part name="DismissFlcMsgPart" element="tns:DismissFreelancer" />
+    </message>
+    <message name="DismissFlcResMsg">
+        <part name="DismissFlcResMsgPart" element="tns:DismissFreelancerResponse" />
+    </message>
+    <message name="SetStateMsg">
+        <part name="SetStateMsgPart" element="tns:SetState" />
+    </message>
+    <message name="SetStateResMsg">
+        <part name="SetStateResMsgPart" element="tns:SetStateResponse" />
+    </message>
+
+    <!-- Freelancer port definition -->
     <portType name="FlcsPort">
         <operation name="FlcsByJobOp">
             <input message="tns:FlcsByJobMsg" />
@@ -63,31 +116,86 @@
         </operation>
     </portType>
 
+    <!-- Contract port definition -->
+    <portType name="ContractsPort">
+        <operation name="AssignFlcOp">
+            <input message="tns:AssignFlcMsg" />
+            <output message="tns:AssignFlcResMsg" />
+        </operation>
+        <operation name="DismissFlcOp">
+            <input message="tns:DismissFlcMsg" />
+            <output message="tns:DismissFlcResMsg" />
+        </operation>
+        <operation name="SetStateOp">
+            <input message="tns:SetStateMsg" />
+            <output message="tns:SetStateResMsg" />
+        </operation>
+    </portType>
+
+    <!-- Freelancer binding definition -->
     <binding name="FlcsBinding" type="tns:FlcsPort">
         <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
         <operation name="FlcsByJobOp">
             <wsdlsoap:operation soapAction="" />
-                <input>
-                    <wsdlsoap:body use="literal" />
-                </input>
-                <output>
-                    <wsdlsoap:body use="literal" />
-                </output>
+            <input>
+                <wsdlsoap:body use="literal" />
+            </input>
+            <output>
+                <wsdlsoap:body use="literal" />
+            </output>
         </operation>
         <operation name="FlcInfoOp">
             <wsdlsoap:operation soapAction="" />
-                <input>
-                    <wsdlsoap:body use="literal" />
-                </input>
-                <output>
-                    <wsdlsoap:body use="literal" />
-                </output>
+            <input>
+                <wsdlsoap:body use="literal" />
+            </input>
+            <output>
+                <wsdlsoap:body use="literal" />
+            </output>
+        </operation>
+    </binding>
+
+    <!-- Contract binding definition -->
+    <binding name="ContractsBinding" type="tns:ContractsPort">
+        <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+        <operation name="AssignFlcOp">
+            <wsdlsoap:operation soapAction="" />
+            <input>
+                <wsdlsoap:body use="literal" />
+            </input>
+            <output>
+                <wsdlsoap:body use="literal" />
+            </output>
+        </operation>
+        <operation name="DismissFlcOp">
+            <wsdlsoap:operation soapAction="" />
+            <input>
+                <wsdlsoap:body use="literal" />
+            </input>
+            <output>
+                <wsdlsoap:body use="literal" />
+            </output>
+        </operation>
+        <operation name="SetStateOp">
+            <wsdlsoap:operation soapAction="" />
+            <input>
+                <wsdlsoap:body use="literal" />
+            </input>
+            <output>
+                <wsdlsoap:body use="literal" />
+            </output>
         </operation>
     </binding>
 
     <service name="FlcsService">
         <port binding="tns:FlcsBinding" name="FlcsDemo">
             <wsdlsoap:address location="http://127.0.0.1:8000/freelancers" />
+        </port>
+    </service>
+
+    <service name="ContractsService">
+        <port binding="tns:ContractsBinding" name="ContractsDemo">
+            <wsdlsoap:address location="http://127.0.0.1:8000/contracts" />
         </port>
     </service>
 
