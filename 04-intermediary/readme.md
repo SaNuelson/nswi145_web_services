@@ -64,8 +64,10 @@ namely, `GetFreelancerInfo`, where a privacy tag can be added in form:
 <privacy xmlns="http://servlet.privacy/" level="partial" />
 ```
 
-with `level` being one of `["none", "partial", "full"]` each of which
-results in private information about freelancer being censored in some way.
+with `level` being one of 
+- "none" - provides no privacy and is equivalent to the privacy tag being ommited entirely
+- "partial" - provides partial privacy, replacing all but first name with initials (e.g., "John van Dongle Jr." translates to "John D. J.")
+- "full" - full name gets hidden ("John van Dongle Jr." becomes "\*\*\*\* \*\*\* \*\*\*\*\*\* \*\*\*")
 
 ### Usage
 

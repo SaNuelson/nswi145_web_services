@@ -41,8 +41,6 @@ public class FreelancerServlet extends HttpServlet {
             boolean isFlcInfoRequest = body.getChildElements(Constants.QNames.GET_FLC_INFO).hasNext();
             boolean isFlcByJobRequest = body.getChildElements(Constants.QNames.GET_BY_JOB_TYPE).hasNext();
 
-            log("Received post request with " + isFlcByJobRequest + isFlcInfoRequest);
-
             if (isFlcByJobRequest && isFlcInfoRequest) {
                 throw new SOAPException("Incoming SOAP contains both GetByJobType and GetFreelancerInfo elements.");
             }
@@ -58,7 +56,6 @@ public class FreelancerServlet extends HttpServlet {
             }
 
             if (responseMessage != null) {
-                log("Writing response message to response");
                 responseMessage.writeTo(response.getOutputStream());
                 return;
             }
@@ -80,7 +77,6 @@ public class FreelancerServlet extends HttpServlet {
     }
 
     private SOAPMessage handleGetFlcInfoRequest(SOAPMessage requestMessage) throws SOAPException {
-        log("handleGetFlcInfoRequest");
 
         // check for the privacy tag
         SOAPBody requestBody = requestMessage.getSOAPPart().getEnvelope().getBody();
@@ -88,7 +84,6 @@ public class FreelancerServlet extends HttpServlet {
 
         // in case it's missing, send forward and back unchanged
         if (!hasPrivacyElement) {
-            log(("handleGetFlcInfoRequest with privacy tag missing"));
             return connection.call(requestMessage, Constants.CONTRACTOR_FREELANCER_ENDPOINT);
         }
 
@@ -104,28 +99,20 @@ public class FreelancerServlet extends HttpServlet {
 
         // case "none", no change
         if (Objects.equals(privacyLevel, "none")) {
-            log(("handleGetFlcInfoRequest with privacy set to none"));
             privacyResElement.setTextContent("None privacy provided.");
             return responseMessage;
         }
-        log("AAA");
         SOAPElement flcInfoResElement = (SOAPElement) responseBody.getChildElements(Constants.QNames.GET_FLC_INFO_RES).next();
         SOAPElement flcInfoDetailsElement = (SOAPElement) flcInfoResElement.getChildElements(Constants.QNames.FLC_INFO).next();
-        log("BBB");
         SOAPElement nameElement = (SOAPElement) flcInfoDetailsElement.getChildElements(Constants.QNames.NAME).next();
-        log("CCC");
         String freelancerName = nameElement.getValue();
-        log(freelancerName);
         switch(privacyLevel) {
             case "partial":
-                log(("handleGetFlcInfoRequest with privacy set to partial"));
                 String partiallyCensoredName = partiallyCensor(freelancerName);
-                log(partiallyCensoredName);
                 nameElement.setTextContent(partiallyCensoredName);
                 privacyResElement.setTextContent("Partial privacy provided.");
                 return responseMessage;
             case "full":
-                log(("handleGetFlcInfoRequest with privacy set to full"));
                 String fullyCensoredName = freelancerName.replaceAll("[a-zA-Z]","*");
                 nameElement.setTextContent(fullyCensoredName);
                 privacyResElement.setTextContent("Full privacy provided.");
