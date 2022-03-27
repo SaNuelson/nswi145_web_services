@@ -1,0 +1,43 @@
+<xs:schema xmlns:tns="http://webinterface/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://webinterface/" version="1.0">
+
+  <xs:element name="GetByJobType" type="tns:GetByJobType"/>
+
+  <xs:element name="GetByJobTypeResponse" type="tns:GetByJobTypeResponse"/>
+
+  <xs:element name="GetFreelancerInfo" type="tns:GetFreelancerInfo"/>
+
+  <xs:element name="GetFreelancerInfoResponse" type="tns:GetFreelancerInfoResponse"/>
+
+  <xs:complexType name="GetByJobType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GetByJobTypeResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GetFreelancerInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GetFreelancerInfoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:freelancerInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="freelancerInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="jobTypes" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
