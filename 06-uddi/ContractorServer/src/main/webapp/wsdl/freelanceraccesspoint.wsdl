@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="FreelancerAccessPointService" targetNamespace="http://webservice/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://webservice/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://webinterface/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:import namespace="http://webinterface/" location="IFreelancerAccessPoint.wsdl">
+    </wsdl:import>
+  <wsdl:binding name="FreelancerAccessPointServiceSoapBinding" type="ns1:IFreelancerAccessPoint">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetByJobType">
+      <soap:operation soapAction="urn:GetByJobType" style="document"/>
+      <wsdl:input name="GetByJobType">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetByJobTypeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFreelancerInfo">
+      <soap:operation soapAction="urn:GetFreelancerInfo" style="document"/>
+      <wsdl:input name="GetFreelancerInfo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetFreelancerInfoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FreelancerAccessPointService">
+    <wsdl:port name="FreelancerAccessPointPort" binding="tns:FreelancerAccessPointServiceSoapBinding">
+      <soap:address location="http://localhost:8080/Server/services/FreelancerAccessPointPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

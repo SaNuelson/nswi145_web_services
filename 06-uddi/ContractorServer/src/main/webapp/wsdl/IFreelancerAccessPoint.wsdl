@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="IFreelancerAccessPoint" targetNamespace="http://webinterface/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://webinterface/">
+  <wsdl:types>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://webinterface/" schemaLocation="freelanceraccesspoint_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="GetByJobType">
+    <wsdl:part name="parameters" element="ns1:GetByJobType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetByJobTypeResponse">
+    <wsdl:part name="parameters" element="ns1:GetByJobTypeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetFreelancerInfo">
+    <wsdl:part name="parameters" element="ns1:GetFreelancerInfo">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetFreelancerInfoResponse">
+    <wsdl:part name="parameters" element="ns1:GetFreelancerInfoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="IFreelancerAccessPoint">
+    <wsdl:operation name="GetByJobType">
+      <wsdl:input name="GetByJobType" message="ns1:GetByJobType">
+    </wsdl:input>
+      <wsdl:output name="GetByJobTypeResponse" message="ns1:GetByJobTypeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFreelancerInfo">
+      <wsdl:input name="GetFreelancerInfo" message="ns1:GetFreelancerInfo">
+    </wsdl:input>
+      <wsdl:output name="GetFreelancerInfoResponse" message="ns1:GetFreelancerInfoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
