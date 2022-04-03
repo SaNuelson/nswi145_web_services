@@ -8,8 +8,8 @@
 
   <process name="tns:InitContract">
     <active>true</active>
-    <provide partnerLink="tns:ContractInitLink">
-      <service name="tns:InitContractService" port="tns:IncomingContractInfoPort" />
+    <provide partnerLink="ContractInitLink">
+      <service name="tns:InitContractService" port="IncomingContractInfoPort" />
     </provide>
   </process>
 </deploy>

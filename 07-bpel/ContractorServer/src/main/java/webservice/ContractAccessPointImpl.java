@@ -35,8 +35,9 @@ public class ContractAccessPointImpl implements ContractAccessPoint {
     }
 
     @Override
-    public void submitContract(ContractInfo contractInfo) {
+    public boolean submitContract(ContractInfo contractInfo) {
         db.contractInfos.add(contractInfo);
+        return true;
     }
 
     @Override

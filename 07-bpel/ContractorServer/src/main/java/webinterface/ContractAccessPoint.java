@@ -20,7 +20,8 @@ public interface ContractAccessPoint {
     // Modification
 
     @WebMethod
-    public void submitContract(ContractInfo contractInfo);
+    @WebResult(name="success")
+    public boolean submitContract(ContractInfo contractInfo);
 
     @WebMethod
     @WebResult(name="success")
