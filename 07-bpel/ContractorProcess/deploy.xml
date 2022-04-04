@@ -1,15 +1,14 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <deploy 
     xmlns="http://www.apache.org/ode/schemas/dd/2007/03"
     xmlns:tnsbpel="http://contractor/bpel"
-    xmlns:tnswsdl="http://contractor/wsdl"
-    xmlns:tns="http://contractor/"
-  >
+    xmlns:tnswsdl="http://contractor/wsdl">
 
-  <process name="tns:InitContract">
+  <process name="tnsbpel:ContractorProcess">
     <active>true</active>
-    <provide partnerLink="ContractInitLink">
-      <service name="tns:InitContractService" port="IncomingContractInfoPort" />
+    <provide partnerLink="ClientPartnerLink">
+      <service name="tnswsdl:ClientPort" port="ClientPort" />
     </provide>
   </process>
+
 </deploy>

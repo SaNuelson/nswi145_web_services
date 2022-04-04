@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<process
+	name="ContractorProcess"
+	xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"
+	expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"
+	targetNamespace="http://contractor/bpel"
+	xmlns:tns="http://contractor/bpel"
+	xmlns:tnswsdl="http://contractor/wsdl"
+	xmlns:tnsxsd="http://contractor/xsd"
+    xmlns:ctorflc="http://webinterface/">
+
+	<import
+		location="ContractorProcess.wsdl"
+		namespace="http://contractor/wsdl"
+		importType="http://schemas.xmlsoap.org/wsdl/" />
+
+
+	<partnerLinks>
+		<partnerLink name="ClientPartnerLink"
+			partnerLinkType="tnswsdl:ClientLinkType"
+			myRole="ContractInitExecutorRole" />
+            
+        <!-- Breaking bit -->
+        <partnerLink name="FlcAPPartnerLink"
+            partnerLinkType="tnswsdl:FlcAPLinkType"
+            myRole="InfoRequisitorRole"
+            partnerRole="InfoProviderRole" />
+        <!-- Breaking bit -->
+	</partnerLinks>
+
+
+	<variables>
+		<variable name="inputs" messageType="tnswsdl:ContractInfoMessage" />
+        <variable name="contractInfo" element="tnswsdl:InitContractInput" />
+		<variable name="outputs" messageType="tnswsdl:SuccessInfoMessage" />
+        <!-- Debug -->
+        <variable name="freelancerDetailsRequest" messageType="ctorflc:getFreelancerDetails" />
+        <variable name="freelancerDetailsResponse" messageType="ctorflc:getFreelancerDetailsResponse" />
+        <!-- Debug -->
+	</variables>
+
+
+	<sequence>
+
+		<receive
+			name="ReceiveInitContractInputs"
+			partnerLink="ClientPartnerLink"
+			portType="tnswsdl:ClientPortType"
+			operation="InitContractOperation"
+			variable="inputs"
+			createInstance="yes" />
+
+        <assign name="ExtractContractInfo">
+            <copy>
+                <from variable="inputs" part="parameters" />
+                <to variable="contractInfo" />
+            </copy>
+        </assign>
+
+        <!-- Debug -->
+        <invoke 
+            name="InvokeGetFreelancerDetails"
+            partnerLink="FlcAPPartnerLink"
+            operation="getFreelancerDetails"
+            inputVariable="freelancerDetailsRequest"
+            outputVariable="freelancerDetailsResponse" />
+        <!-- Debug -->
+
+		<assign name="CopyAssign">
+			<copy>
+				<from>$contractInfo/customerId</from>
+				<to part="parameters" variable="outputs"></to>
+			</copy>
+		</assign>
+
+
+		<reply
+			name="ReplyInitContractOutputputs"
+			partnerLink="ClientPartnerLink"
+			portType="tnswsdl:ClientPortType"
+			operation="InitContractOperation"
+			variable="outputs" />
+
+	</sequence>
+
+
+</process>

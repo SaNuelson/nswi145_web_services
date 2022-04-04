@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+
+	xmlns:ctorwsdl="http://contractor/wsdl"
+	xmlns:ctorxsd="http://contractor/xsd"
+	xmlns:ctorflc="http://webinterface/"
+	xmlns:ctorctr="http://webinterface/"
+	targetNamespace="http://contractor/wsdl">
+
+	<wsdl:import
+		location="freelancers.wsdl"
+		namespace="http://webinterface/" />
+
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://contractor/xsd">
+			<xsd:element name="InitContractInput" type="ctorxsd:ContractInfo" />
+			<xsd:element name="InitContractOutput" type="xsd:integer" />
+			<xsd:complexType name="ContractInfo">
+				<xsd:sequence>
+					<xsd:element name="title" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+					<xsd:element name="description" type="xsd:string" minOccurs="0" maxOccurs="1" />
+					<xsd:element name="customerId" type="xsd:int" minOccurs="1" maxOccurs="1" />
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+	</wsdl:types>
+
+
+	<!-- MESSAGE: Client incoming message -->
+	<wsdl:message name="ContractInfoMessage">
+		<wsdl:part name="parameters" element="ctorxsd:InitContractInput" />
+	</wsdl:message>
+
+	<!-- MESSAGE: Client outgoung message -->
+	<wsdl:message name="SuccessInfoMessage">
+		<wsdl:part name="parameters" element="ctorxsd:InitContractOutput" />
+	</wsdl:message>
+
+	<!-- PORT_TYPE: Communication with client -->
+	<wsdl:portType name="ClientPortType">
+		<wsdl:operation name="InitContractOperation">
+			<wsdl:input name="InitContractInput" message="ctorwsdl:ContractInfoMessage" />
+			<wsdl:output name="InitContractOutput" message="ctorwsdl:SuccessInfoMessage" />
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<!-- PORT_TYPE: Commmunication with Freelancer AP -->
+	<wsdl:portType name="FlcAPPortType">
+		<wsdl:operation name="ReceiveFreelancerDetailsOperation">
+			<wsdl:input name="ReceiveFreelancerDetailsInput" message="ctorflc:getFreelancerDetailsResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<!-- BINDING: Communication with client -->
+	<wsdl:binding name="ClientSOAPBinding" type="ctorwsdl:ClientPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="InitContractOperation">
+			<soap:operation soapAction="urn:InitContractOperation" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+
+	<!-- BINDING: Communication with Freelancer AP -->
+	<wsdl:binding name="FreelancerAPSOAPBinding" type="ctorwsdl:FlcAPPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="ReceiveFreelancerDetailsOperation">
+			<soap:operation soapAction="urn:ReceiveFreelancerDetailsOperation" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+		</wsdl:operation>
+	</wsdl:binding>
+
+	<wsdl:service name="ClientPort">
+		<!-- SERVICE_PORT: Communication with client -->
+		<wsdl:port name="ClientPort" binding="ctorwsdl:ClientSOAPBinding">
+			<soap:address location="http://localhost:8080/ode/processes/InitContract" />
+		</wsdl:port>
+		<!-- SERVICE_PORT: Communication with Freelancer AP -->
+		<wsdl:port name="FlcAPPort" binding="ctorwsdl:FreelancerAPSOAPBinding">
+			<soap:address location="http://localhost:8080/ode/processes/FlcInfoCallback" />
+		</wsdl:port>
+	</wsdl:service>
+	
+	<!-- PARTNER_LINK_TYPE: Communication with client -->
+	<plnk:partnerLinkType name="ClientLinkType">
+		<!-- LINK_ROLE: Process/Executor -->
+		<plnk:role
+			name="ContractInitExecutorRole"
+			portType="ctorwsdl:ClientPortType" />
+	</plnk:partnerLinkType>
+
+	<!-- PARTNER_LINK_TYPE: Communication with Freelancer AP -->
+	<plnk:partnerLinkType name="FlcAPLinkType">
+		<plnk:role
+			name="InfoRequisitorRole"
+			portType="ctorwsdl:FlcAPPortType" />
+		<plnk:role 
+			name="InfoProviderRole"
+			portType="ctorflc:FreelancerAccessPoint"/>
+	</plnk:partnerLinkType>
+
+</wsdl:definitions>
