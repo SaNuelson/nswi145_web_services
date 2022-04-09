@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "03981293-2542-47f4-a4a9-cb456a8c33b6",
+		"name": "RestContractorServerExamples",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Contracts",
+			"item": [
+				{
+					"name": "Get Contracts Made By Customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/RestContractorServer/webservice/contracts/by/{{customerId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"RestContractorServer",
+								"webservice",
+								"contracts",
+								"by",
+								"{{customerId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Contrac tInfo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/RestContractorServer/webservice/contracts/info/{{contractId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"RestContractorServer",
+								"webservice",
+								"contracts",
+								"info",
+								"{{contractId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign Freelancer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/RestContractorServer/webservice/contracts/assign/{{contractId}}/{{freelancerId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"RestContractorServer",
+								"webservice",
+								"contracts",
+								"assign",
+								"{{contractId}}",
+								"{{freelancerId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dismiss Freelancer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/RestContractorServer/webservice/contracts/dismiss/{{contractId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"RestContractorServer",
+								"webservice",
+								"contracts",
+								"dismiss",
+								"{{contractId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Contract",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"REST-inserted contract\",\r\n    \"description\": \"REST-inserted contract description.\",\r\n    \"jobType\": \"knitting\",\r\n    \"customerId\": {{customerId}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/RestContractorServer/webservice/contracts/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"RestContractorServer",
+								"webservice",
+								"contracts",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Freelancers",
+			"item": [
+				{
+					"name": "Get Freelancers By Job Type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/RestContractorServer/webservice/freelancers/byJob/{{jobType}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"RestContractorServer",
+								"webservice",
+								"freelancers",
+								"byJob",
+								"{{jobType}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Freelancer Info",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Debug",
+			"item": [
+				{
+					"name": "DebugDumpContent",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/RestContractorServer/webservice/debug",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"RestContractorServer",
+								"webservice",
+								"debug"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "freelancerId",
+			"value": "184549382"
+		},
+		{
+			"key": "contractId",
+			"value": "201326592"
+		},
+		{
+			"key": "customerId",
+			"value": "167772167",
+			"type": "string"
+		},
+		{
+			"key": "jobType",
+			"value": "knitting",
+			"type": "string"
+		}
+	]
+}
