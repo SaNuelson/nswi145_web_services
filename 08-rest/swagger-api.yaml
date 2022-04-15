@@ -1,0 +1,65 @@
+openapi: 3.0.0
+info:
+  title: Contractor Service REST API
+  description: This is an run-down of available REST API of the Cotnractor service (including dev-exclusive debugging calls)
+  version: 0.1.9
+servers:
+  - url: http://localhost:8080/RestContractorServer/webservice/
+    description: Localhost Tomcat server used for debugging purposes
+components:
+  schemas:
+    ContractInfo:
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        description:
+          type: string
+        jobType:
+          type: string
+        customerId:
+          type: integer
+        freelancerId:
+          type: integer
+    CustomerInfo:
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        pass:
+          type: string # hardly secure but would get removed from production naturally
+    FreelancerInfo:i
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        jobTypes:
+          type: array
+          items:
+            type: string
+        hourlyRate:
+          type: integer
+paths:
+  /contracts/info/{contractId}:
+    get:
+      summary: Returns an info about selected contract.
+      description: The contract ID should be received as part of the `/contracts/by/{customerId}` call.
+      parameters:
+        - name: contractId
+          in: path
+          description: ID of the contract
+          required: true
+          schema:
+            type: integer
+            format: int32
+            default: 201326592
+      responses:
+        '200':    # status code
+          description: Response on successful request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContractInfo'
