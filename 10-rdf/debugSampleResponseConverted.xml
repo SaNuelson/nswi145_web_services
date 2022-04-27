@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <contractInfos>
+    <customerId>167772163</customerId>
+    <description>Sample description for contract number 0</description>
+    <freelancerId>184549383</freelancerId>
+    <id>201326592</id>
+    <jobType>glassblowing</jobType>
+    <title>Sample contract #0</title>
+  </contractInfos>
+  <contractInfos>
+    <customerId>167772161</customerId>
+    <description>Sample description for contract number 1</description>
+    <freelancerId>184549377</freelancerId>
+    <id>201326593</id>
+    <jobType>smithing</jobType>
+    <title>Sample contract #1</title>
+  </contractInfos>
+  <contractInfos>
+    <customerId>167772169</customerId>
+    <description>Sample description for contract number 2</description>
+    <freelancerId>184549381</freelancerId>
+    <id>201326594</id>
+    <jobType>smithing</jobType>
+    <title>Sample contract #2</title>
+  </contractInfos>
+  <contractInfos>
+    <customerId>167772168</customerId>
+    <description>Sample description for contract number 3</description>
+    <freelancerId>184549379</freelancerId>
+    <id>201326595</id>
+    <jobType>painting</jobType>
+    <title>Sample contract #3</title>
+  </contractInfos>
+  <contractInfos>
+    <customerId>167772167</customerId>
+    <description>Sample description for contract number 4</description>
+    <freelancerId>184549384</freelancerId>
+    <id>201326596</id>
+    <jobType>painting</jobType>
+    <title>Sample contract #4</title>
+  </contractInfos>
+  <customerInfos>
+    <id>167772160</id>
+    <name>Kinley Novak</name>
+    <pass>password123</pass>
+  </customerInfos>
+  <customerInfos>
+    <id>167772161</id>
+    <name>Armani Romero</name>
+    <pass>1234</pass>
+  </customerInfos>
+  <customerInfos>
+    <id>167772162</id>
+    <name>Gideon Mcmillan</name>
+    <pass>1234</pass>
+  </customerInfos>
+  <customerInfos>
+    <id>167772163</id>
+    <name>Keon Richmond</name>
+    <pass>1234567890</pass>
+  </customerInfos>
+  <customerInfos>
+    <id>167772164</id>
+    <name>Arjun Sellers</name>
+    <pass>qwerty123</pass>
+  </customerInfos>
+  <customerInfos>
+    <id>167772165</id>
+    <name>Tony Riddle</name>
+    <pass>abc123</pass>
+  </customerInfos>
+  <customerInfos>
+    <id>167772166</id>
+    <name>Jovanny Irwin</name>
+    <pass>qwerty</pass>
+  </customerInfos>
+  <customerInfos>
+    <id>167772167</id>
+    <name>Jaiden Richmond</name>
+    <pass>1234567</pass>
+  </customerInfos>
+  <customerInfos>
+    <id>167772168</id>
+    <name>Giancarlo Richmond</name>
+    <pass>1q2w3e</pass>
+  </customerInfos>
+  <customerInfos>
+    <id>167772169</id>
+    <name>Armani Cline</name>
+    <pass>aa12345678</pass>
+  </customerInfos>
+  <freelancerInfos>
+    <hourlyRate>199</hourlyRate>
+    <id>184549376</id>
+    <jobTypes>painting</jobTypes>
+    <name>Armani Romero</name>
+  </freelancerInfos>
+  <freelancerInfos>
+    <hourlyRate>215</hourlyRate>
+    <id>184549377</id>
+    <jobTypes>knitting</jobTypes>
+    <jobTypes>glassblowing</jobTypes>
+    <name>Keon Mays</name>
+  </freelancerInfos>
+  <freelancerInfos>
+    <hourlyRate>220</hourlyRate>
+    <id>184549378</id>
+    <jobTypes>painting</jobTypes>
+    <jobTypes>glassblowing</jobTypes>
+    <name>Susan Cline</name>
+  </freelancerInfos>
+  <freelancerInfos>
+    <hourlyRate>400</hourlyRate>
+    <id>184549379</id>
+    <jobTypes>smithing</jobTypes>
+    <name>Casey Maddox</name>
+  </freelancerInfos>
+  <freelancerInfos>
+    <hourlyRate>277</hourlyRate>
+    <id>184549380</id>
+    <jobTypes>knitting</jobTypes>
+    <name>Ryker Pratt</name>
+  </freelancerInfos>
+  <freelancerInfos>
+    <hourlyRate>243</hourlyRate>
+    <id>184549381</id>
+    <jobTypes>knitting</jobTypes>
+    <jobTypes>painting</jobTypes>
+    <name>Darien Gill</name>
+  </freelancerInfos>
+  <freelancerInfos>
+    <hourlyRate>342</hourlyRate>
+    <id>184549382</id>
+    <jobTypes>knitting</jobTypes>
+    <jobTypes>smithing</jobTypes>
+    <name>Jaeden Hancock</name>
+  </freelancerInfos>
+  <freelancerInfos>
+    <hourlyRate>228</hourlyRate>
+    <id>184549383</id>
+    <jobTypes>knitting</jobTypes>
+    <jobTypes>painting</jobTypes>
+    <jobTypes>smithing</jobTypes>
+    <jobTypes>glassblowing</jobTypes>
+    <name>Kinley Tate</name>
+  </freelancerInfos>
+  <freelancerInfos>
+    <hourlyRate>420</hourlyRate>
+    <id>184549384</id>
+    <jobTypes>knitting</jobTypes>
+    <jobTypes>painting</jobTypes>
+    <jobTypes>smithing</jobTypes>
+    <jobTypes>glassblowing</jobTypes>
+    <name>Ibrahim Maddox</name>
+  </freelancerInfos>
+  <freelancerInfos>
+    <hourlyRate>209</hourlyRate>
+    <id>184549385</id>
+    <jobTypes>glassblowing</jobTypes>
+    <name>Giancarlo Schwartz</name>
+  </freelancerInfos>
+</root>

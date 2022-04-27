@@ -1,0 +1,74 @@
+{
+    "@context": {
+      "@base": "http://www.contractor.novelins.com/",
+      "ctor": "http://www.contractor.novelins.com/",
+      
+      "customer": "http://www.contractor.novelins.com/vocab#customer",
+      "freelancer": "http://www.contractor.novelins.com/vocab#freelancer",
+      "contract": "http://purl.org/procurement/public-contracts#Contract",
+      
+      "givenName": "http://xmlns.com/foaf/0.1/givenName",
+      "familyName": "http://xmlns.com/foaf/0.1/familyName",
+      "password": "http://linkeddata.center/kees/v1#password",
+      
+      "title": "http://purl.org/dc/terms/title",
+      "description": "http://purl.org/dc/terms/description",
+      "category": "http://purl.org/goodrelations/v1#category"
+    },
+    "ctor": [
+      {
+        "@id": "201326592",
+        "@type": "contract",
+        "title": "Sample contract #0",
+        "description": "Sample description for contract number 0",
+        "category": "glassblowing"
+      },
+      {
+        "@id": "201326593",
+        "@type": "contract",
+        "title": "Sample contract #1",
+        "description": "Sample description for contract number 1",
+        "category": "smithing"
+      },
+      {
+        "@id": "167772160",
+        "@type": "customer",
+        "givenName": "Kinley",
+        "familyName": "Novak",
+        "password": "password123"
+      },
+      {
+        "@id": "167772161",
+        "@type": "customer",
+        "givenName": "Armani",
+        "familyName": "Romero",
+        "password": "1234"
+      },
+      {
+        "@id": "184549376",
+        "@type": "freelancer",
+        "givenName": "Armani",
+        "familyName": "Romero",
+        "offers": "http://www.contractor.novelins.com/woff184549376painting"
+      },
+      {
+        "@id": "184549377",
+        "@type": "freelancer",
+        "givenName": "Keon",
+        "familyName": "Mays",
+        "offers": "http://www.contractor.novelins.com/woff184549377knitting"
+      },
+      {
+        "@id": "woff184549376painting",
+        "@type": "wagedOffering",
+        "category": "painting",
+        "costsHourly": 199
+      },
+      {
+        "@id": "woff184549377knitting",
+        "@type": "wagedOffering",
+        "category": "knitting",
+        "costsHourly": 215
+      }
+    ]
+  }

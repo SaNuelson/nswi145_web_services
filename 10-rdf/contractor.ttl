@@ -1,0 +1,63 @@
+@prefix pc: <http://purl.org/procurement/public-contracts#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ctors: <https://www.contractor.novelins.com/> .
+@prefix schema: <http://schema.org/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix time: <https://www.w3.org/2006/time#> .
+
+ctors:customer
+    rdf:comment "Class of a person who creates demand for products and/or services."@en ;
+    rdf:type rdfs:Class ;
+    rdfs:subClassOf foaf:Person .
+
+ctors:freelancer
+    rdf:comment "Class of a person who fulfills demand for products and/or services, while not associated with any company."@en ;
+    rdf:type rdfs:Class ;
+    rdfs:subClassOf foaf:Person .
+
+ctors:flatPriceContract 
+    rdf:comment "Sublcass of a pc:Contract where price is fixed regardless of time spent on completing the order."@en ;
+    rdf:type rdfs:Class ;
+    rdfs:subClassOf pc:Contract .
+
+ctors:timeBasedContract 
+    rdf:comment "Subclass of a pc:Contract where price is set based on time spent on completing the order (within set bounds)."@en ;
+    rdf:type rdfs:Class ;
+    rdfs:subClassOf pc:Contract .
+
+ctors:wagedOffering 
+    rdf:comment "Class of a specific offer, of which price is set by hourly pay."@en ;
+    rdf:type rdfs:Class ;
+    rdfs:subClassOf gr:Offering .
+
+ctors:costsHourly
+    rdf:comment "Property specifyin the price of product or service per hours."@en ;
+    rdf:type rdfs:Property ;
+    rdfs:range schema:Float ; # possibly gr:PriceSpecification (?), left Float for simplicity
+    rdfs:domain ctors:wagedOffering .
+
+ctors:assignedTo
+    rdf:comment "Property specifying that subject freelancer is bound to fulfill an object contract."@en ;
+    rdf:type rdfs:Property ;
+    rdfs:range pc:Contract ;
+    rdfs:domain ctors:freelancer .
+
+ctors:minEstTime
+    rdf:comment "Property specifying that subject contract is bound to be fulfilled after at least object time."@en ;
+    rdf:type rdfs:Property ;
+    rdfs:range ctors:timeBasedContract ;
+    rdfs:domain time:Interval .
+
+ctors:maxEstTime
+    rdf:comment "Property specifying that subject contract is bound to be fulfilled after at most object time."@en ;
+    rdf:type rdfs:Property ;
+    rdfs:range ctors:timeBasedContract ;
+    rdfs:domain time:Interval .
+
+ctors:estimatedCost
+    rdf:comment "Property specifying that subject contract is bound to be priced at estimated object price regardless of total time taken to complete it."@en ;
+    rdf:type rdfs:Property ;
+    rdfs:range ctors:flatPriceContract ;
+    rdfs:domain schema:Float .

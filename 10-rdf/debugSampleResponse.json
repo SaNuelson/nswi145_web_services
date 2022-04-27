@@ -1,0 +1,188 @@
+{
+    "contractInfos": [
+        {
+            "customerId": 167772163,
+            "description": "Sample description for contract number 0",
+            "freelancerId": 184549383,
+            "id": 201326592,
+            "jobType": "glassblowing",
+            "title": "Sample contract #0"
+        },
+        {
+            "customerId": 167772161,
+            "description": "Sample description for contract number 1",
+            "freelancerId": 184549377,
+            "id": 201326593,
+            "jobType": "smithing",
+            "title": "Sample contract #1"
+        },
+        {
+            "customerId": 167772169,
+            "description": "Sample description for contract number 2",
+            "freelancerId": 184549381,
+            "id": 201326594,
+            "jobType": "smithing",
+            "title": "Sample contract #2"
+        },
+        {
+            "customerId": 167772168,
+            "description": "Sample description for contract number 3",
+            "freelancerId": 184549379,
+            "id": 201326595,
+            "jobType": "painting",
+            "title": "Sample contract #3"
+        },
+        {
+            "customerId": 167772167,
+            "description": "Sample description for contract number 4",
+            "freelancerId": 184549384,
+            "id": 201326596,
+            "jobType": "painting",
+            "title": "Sample contract #4"
+        }
+    ],
+    "customerInfos": [
+        {
+            "id": 167772160,
+            "name": "Kinley Novak",
+            "pass": "password123"
+        },
+        {
+            "id": 167772161,
+            "name": "Armani Romero",
+            "pass": "1234"
+        },
+        {
+            "id": 167772162,
+            "name": "Gideon Mcmillan",
+            "pass": "1234"
+        },
+        {
+            "id": 167772163,
+            "name": "Keon Richmond",
+            "pass": "1234567890"
+        },
+        {
+            "id": 167772164,
+            "name": "Arjun Sellers",
+            "pass": "qwerty123"
+        },
+        {
+            "id": 167772165,
+            "name": "Tony Riddle",
+            "pass": "abc123"
+        },
+        {
+            "id": 167772166,
+            "name": "Jovanny Irwin",
+            "pass": "qwerty"
+        },
+        {
+            "id": 167772167,
+            "name": "Jaiden Richmond",
+            "pass": "1234567"
+        },
+        {
+            "id": 167772168,
+            "name": "Giancarlo Richmond",
+            "pass": "1q2w3e"
+        },
+        {
+            "id": 167772169,
+            "name": "Armani Cline",
+            "pass": "aa12345678"
+        }
+    ],
+    "freelancerInfos": [
+        {
+            "hourlyRate": 199,
+            "id": 184549376,
+            "jobTypes": [
+                "painting"
+            ],
+            "name": "Armani Romero"
+        },
+        {
+            "hourlyRate": 215,
+            "id": 184549377,
+            "jobTypes": [
+                "knitting",
+                "glassblowing"
+            ],
+            "name": "Keon Mays"
+        },
+        {
+            "hourlyRate": 220,
+            "id": 184549378,
+            "jobTypes": [
+                "painting",
+                "glassblowing"
+            ],
+            "name": "Susan Cline"
+        },
+        {
+            "hourlyRate": 400,
+            "id": 184549379,
+            "jobTypes": [
+                "smithing"
+            ],
+            "name": "Casey Maddox"
+        },
+        {
+            "hourlyRate": 277,
+            "id": 184549380,
+            "jobTypes": [
+                "knitting"
+            ],
+            "name": "Ryker Pratt"
+        },
+        {
+            "hourlyRate": 243,
+            "id": 184549381,
+            "jobTypes": [
+                "knitting",
+                "painting"
+            ],
+            "name": "Darien Gill"
+        },
+        {
+            "hourlyRate": 342,
+            "id": 184549382,
+            "jobTypes": [
+                "knitting",
+                "smithing"
+            ],
+            "name": "Jaeden Hancock"
+        },
+        {
+            "hourlyRate": 228,
+            "id": 184549383,
+            "jobTypes": [
+                "knitting",
+                "painting",
+                "smithing",
+                "glassblowing"
+            ],
+            "name": "Kinley Tate"
+        },
+        {
+            "hourlyRate": 420,
+            "id": 184549384,
+            "jobTypes": [
+                "knitting",
+                "painting",
+                "smithing",
+                "glassblowing"
+            ],
+            "name": "Ibrahim Maddox"
+        },
+        {
+            "hourlyRate": 209,
+            "id": 184549385,
+            "jobTypes": [
+                "glassblowing"
+            ],
+            "name": "Giancarlo Schwartz"
+        }
+    ]
+}

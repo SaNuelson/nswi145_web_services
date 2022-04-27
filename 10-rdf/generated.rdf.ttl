@@ -1,0 +1,262 @@
+
+@prefix pc: <http://purl.org/procurement/public-contracts#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ctors: <http://www.contractor.novelins.com/vocab#> .
+@prefix ctor: <http://www.contractor.novelins.com/> .
+@prefix kees: <http://linkeddata.center/kees/v1#> .
+@prefix schema: <http://schema.org/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix gr: <http://purl.org/goodrelations/v1#> .
+        
+  
+ctor:201326592 a pc:Contract ;
+    dc:title "Sample contract #0"@en ;
+    dc:description "Sample description for contract number 0"@en ;
+    gr:category "glassblowing"@en .
+    
+  
+ctor:201326593 a pc:Contract ;
+    dc:title "Sample contract #1"@en ;
+    dc:description "Sample description for contract number 1"@en ;
+    gr:category "smithing"@en .
+    
+  
+ctor:201326594 a pc:Contract ;
+    dc:title "Sample contract #2"@en ;
+    dc:description "Sample description for contract number 2"@en ;
+    gr:category "smithing"@en .
+    
+  
+ctor:201326595 a pc:Contract ;
+    dc:title "Sample contract #3"@en ;
+    dc:description "Sample description for contract number 3"@en ;
+    gr:category "painting"@en .
+    
+  
+ctor:201326596 a pc:Contract ;
+    dc:title "Sample contract #4"@en ;
+    dc:description "Sample description for contract number 4"@en ;
+    gr:category "painting"@en .
+    
+  
+ctor:167772160 a ctors:customer ;
+    foaf:givenName "Kinley"@en ;
+    foaf:familyName "Novak"@en ;
+    kees:password "password123" .
+    
+  
+ctor:167772161 a ctors:customer ;
+    foaf:givenName "Armani"@en ;
+    foaf:familyName "Romero"@en ;
+    kees:password "1234" .
+    
+  
+ctor:167772162 a ctors:customer ;
+    foaf:givenName "Gideon"@en ;
+    foaf:familyName "Mcmillan"@en ;
+    kees:password "1234" .
+    
+  
+ctor:167772163 a ctors:customer ;
+    foaf:givenName "Keon"@en ;
+    foaf:familyName "Richmond"@en ;
+    kees:password "1234567890" .
+    
+  
+ctor:167772164 a ctors:customer ;
+    foaf:givenName "Arjun"@en ;
+    foaf:familyName "Sellers"@en ;
+    kees:password "qwerty123" .
+    
+  
+ctor:167772165 a ctors:customer ;
+    foaf:givenName "Tony"@en ;
+    foaf:familyName "Riddle"@en ;
+    kees:password "abc123" .
+    
+  
+ctor:167772166 a ctors:customer ;
+    foaf:givenName "Jovanny"@en ;
+    foaf:familyName "Irwin"@en ;
+    kees:password "qwerty" .
+    
+  
+ctor:167772167 a ctors:customer ;
+    foaf:givenName "Jaiden"@en ;
+    foaf:familyName "Richmond"@en ;
+    kees:password "1234567" .
+    
+  
+ctor:167772168 a ctors:customer ;
+    foaf:givenName "Giancarlo"@en ;
+    foaf:familyName "Richmond"@en ;
+    kees:password "1q2w3e" .
+    
+  
+ctor:167772169 a ctors:customer ;
+    foaf:givenName "Armani"@en ;
+    foaf:familyName "Cline"@en ;
+    kees:password "aa12345678" .
+    
+  
+ctor:184549376 a ctors:freelancer ;
+    gr:offers ctor:woff184549376painting ;
+    foaf:givenName "Armani"@en ;
+    foaf:familyName "Romero"@en .
+    
+    
+ctor:woff184549376painting a ctors:wagedOffering ;
+    gr:category "painting"@en ;
+    ctors:costsHourly 199 .
+    
+  
+ctor:184549377 a ctors:freelancer ;
+    gr:offers ctor:woff184549377knitting ;
+    gr:offers ctor:woff184549377glassblowing ;
+    foaf:givenName "Keon"@en ;
+    foaf:familyName "Mays"@en .
+    
+    
+ctor:woff184549377knitting a ctors:wagedOffering ;
+    gr:category "knitting"@en ;
+    ctors:costsHourly 215 .
+    
+ctor:woff184549377glassblowing a ctors:wagedOffering ;
+    gr:category "glassblowing"@en ;
+    ctors:costsHourly 215 .
+    
+  
+ctor:184549378 a ctors:freelancer ;
+    gr:offers ctor:woff184549378painting ;
+    gr:offers ctor:woff184549378glassblowing ;
+    foaf:givenName "Susan"@en ;
+    foaf:familyName "Cline"@en .
+    
+    
+ctor:woff184549378painting a ctors:wagedOffering ;
+    gr:category "painting"@en ;
+    ctors:costsHourly 220 .
+    
+ctor:woff184549378glassblowing a ctors:wagedOffering ;
+    gr:category "glassblowing"@en ;
+    ctors:costsHourly 220 .
+    
+  
+ctor:184549379 a ctors:freelancer ;
+    gr:offers ctor:woff184549379smithing ;
+    foaf:givenName "Casey"@en ;
+    foaf:familyName "Maddox"@en .
+    
+    
+ctor:woff184549379smithing a ctors:wagedOffering ;
+    gr:category "smithing"@en ;
+    ctors:costsHourly 400 .
+    
+  
+ctor:184549380 a ctors:freelancer ;
+    gr:offers ctor:woff184549380knitting ;
+    foaf:givenName "Ryker"@en ;
+    foaf:familyName "Pratt"@en .
+    
+    
+ctor:woff184549380knitting a ctors:wagedOffering ;
+    gr:category "knitting"@en ;
+    ctors:costsHourly 277 .
+    
+  
+ctor:184549381 a ctors:freelancer ;
+    gr:offers ctor:woff184549381knitting ;
+    gr:offers ctor:woff184549381painting ;
+    foaf:givenName "Darien"@en ;
+    foaf:familyName "Gill"@en .
+    
+    
+ctor:woff184549381knitting a ctors:wagedOffering ;
+    gr:category "knitting"@en ;
+    ctors:costsHourly 243 .
+    
+ctor:woff184549381painting a ctors:wagedOffering ;
+    gr:category "painting"@en ;
+    ctors:costsHourly 243 .
+    
+  
+ctor:184549382 a ctors:freelancer ;
+    gr:offers ctor:woff184549382knitting ;
+    gr:offers ctor:woff184549382smithing ;
+    foaf:givenName "Jaeden"@en ;
+    foaf:familyName "Hancock"@en .
+    
+    
+ctor:woff184549382knitting a ctors:wagedOffering ;
+    gr:category "knitting"@en ;
+    ctors:costsHourly 342 .
+    
+ctor:woff184549382smithing a ctors:wagedOffering ;
+    gr:category "smithing"@en ;
+    ctors:costsHourly 342 .
+    
+  
+ctor:184549383 a ctors:freelancer ;
+    gr:offers ctor:woff184549383knitting ;
+    gr:offers ctor:woff184549383painting ;
+    gr:offers ctor:woff184549383smithing ;
+    gr:offers ctor:woff184549383glassblowing ;
+    foaf:givenName "Kinley"@en ;
+    foaf:familyName "Tate"@en .
+    
+    
+ctor:woff184549383knitting a ctors:wagedOffering ;
+    gr:category "knitting"@en ;
+    ctors:costsHourly 228 .
+    
+ctor:woff184549383painting a ctors:wagedOffering ;
+    gr:category "painting"@en ;
+    ctors:costsHourly 228 .
+    
+ctor:woff184549383smithing a ctors:wagedOffering ;
+    gr:category "smithing"@en ;
+    ctors:costsHourly 228 .
+    
+ctor:woff184549383glassblowing a ctors:wagedOffering ;
+    gr:category "glassblowing"@en ;
+    ctors:costsHourly 228 .
+    
+  
+ctor:184549384 a ctors:freelancer ;
+    gr:offers ctor:woff184549384knitting ;
+    gr:offers ctor:woff184549384painting ;
+    gr:offers ctor:woff184549384smithing ;
+    gr:offers ctor:woff184549384glassblowing ;
+    foaf:givenName "Ibrahim"@en ;
+    foaf:familyName "Maddox"@en .
+    
+    
+ctor:woff184549384knitting a ctors:wagedOffering ;
+    gr:category "knitting"@en ;
+    ctors:costsHourly 420 .
+    
+ctor:woff184549384painting a ctors:wagedOffering ;
+    gr:category "painting"@en ;
+    ctors:costsHourly 420 .
+    
+ctor:woff184549384smithing a ctors:wagedOffering ;
+    gr:category "smithing"@en ;
+    ctors:costsHourly 420 .
+    
+ctor:woff184549384glassblowing a ctors:wagedOffering ;
+    gr:category "glassblowing"@en ;
+    ctors:costsHourly 420 .
+    
+  
+ctor:184549385 a ctors:freelancer ;
+    gr:offers ctor:woff184549385glassblowing ;
+    foaf:givenName "Giancarlo"@en ;
+    foaf:familyName "Schwartz"@en .
+    
+    
+ctor:woff184549385glassblowing a ctors:wagedOffering ;
+    gr:category "glassblowing"@en ;
+    ctors:costsHourly 209 .
+    

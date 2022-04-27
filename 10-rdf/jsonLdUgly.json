@@ -1,0 +1,496 @@
+[
+  { "@id": "http://purl.org/procurement/public-contracts#Contract" },
+  {
+    "@id": "http://www.contractor.novelins.com/167772160",
+    "@type": ["http://www.contractor.novelins.com/vocab#customer"],
+    "http://xmlns.com/foaf/0.1/givenName": [
+      { "@value": "Kinley", "@language": "en" }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      { "@value": "Novak", "@language": "en" }
+    ],
+    "http://linkeddata.center/kees/v1#password": [{ "@value": "password123" }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/167772161",
+    "@type": ["http://www.contractor.novelins.com/vocab#customer"],
+    "http://xmlns.com/foaf/0.1/givenName": [
+      { "@value": "Armani", "@language": "en" }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      { "@value": "Romero", "@language": "en" }
+    ],
+    "http://linkeddata.center/kees/v1#password": [{ "@value": "1234" }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/167772162",
+    "@type": ["http://www.contractor.novelins.com/vocab#customer"],
+    "http://xmlns.com/foaf/0.1/givenName": [
+      { "@value": "Gideon", "@language": "en" }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      { "@value": "Mcmillan", "@language": "en" }
+    ],
+    "http://linkeddata.center/kees/v1#password": [{ "@value": "1234" }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/167772163",
+    "@type": ["http://www.contractor.novelins.com/vocab#customer"],
+    "http://xmlns.com/foaf/0.1/givenName": [
+      { "@value": "Keon", "@language": "en" }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      { "@value": "Richmond", "@language": "en" }
+    ],
+    "http://linkeddata.center/kees/v1#password": [{ "@value": "1234567890" }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/167772164",
+    "@type": ["http://www.contractor.novelins.com/vocab#customer"],
+    "http://xmlns.com/foaf/0.1/givenName": [
+      { "@value": "Arjun", "@language": "en" }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      { "@value": "Sellers", "@language": "en" }
+    ],
+    "http://linkeddata.center/kees/v1#password": [{ "@value": "qwerty123" }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/167772165",
+    "@type": ["http://www.contractor.novelins.com/vocab#customer"],
+    "http://xmlns.com/foaf/0.1/givenName": [
+      { "@value": "Tony", "@language": "en" }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      { "@value": "Riddle", "@language": "en" }
+    ],
+    "http://linkeddata.center/kees/v1#password": [{ "@value": "abc123" }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/167772166",
+    "@type": ["http://www.contractor.novelins.com/vocab#customer"],
+    "http://xmlns.com/foaf/0.1/givenName": [
+      { "@value": "Jovanny", "@language": "en" }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      { "@value": "Irwin", "@language": "en" }
+    ],
+    "http://linkeddata.center/kees/v1#password": [{ "@value": "qwerty" }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/167772167",
+    "@type": ["http://www.contractor.novelins.com/vocab#customer"],
+    "http://xmlns.com/foaf/0.1/givenName": [
+      { "@value": "Jaiden", "@language": "en" }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      { "@value": "Richmond", "@language": "en" }
+    ],
+    "http://linkeddata.center/kees/v1#password": [{ "@value": "1234567" }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/167772168",
+    "@type": ["http://www.contractor.novelins.com/vocab#customer"],
+    "http://xmlns.com/foaf/0.1/givenName": [
+      { "@value": "Giancarlo", "@language": "en" }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      { "@value": "Richmond", "@language": "en" }
+    ],
+    "http://linkeddata.center/kees/v1#password": [{ "@value": "1q2w3e" }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/167772169",
+    "@type": ["http://www.contractor.novelins.com/vocab#customer"],
+    "http://xmlns.com/foaf/0.1/givenName": [
+      { "@value": "Armani", "@language": "en" }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      { "@value": "Cline", "@language": "en" }
+    ],
+    "http://linkeddata.center/kees/v1#password": [{ "@value": "aa12345678" }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/184549376",
+    "@type": ["http://www.contractor.novelins.com/vocab#freelancer"],
+    "http://purl.org/goodrelations/v1#offers": [
+      { "@id": "http://www.contractor.novelins.com/woff184549376painting" }
+    ],
+    "http://xmlns.com/foaf/0.1/givenName": [
+      { "@value": "Armani", "@language": "en" }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      { "@value": "Romero", "@language": "en" }
+    ]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/184549377",
+    "@type": ["http://www.contractor.novelins.com/vocab#freelancer"],
+    "http://purl.org/goodrelations/v1#offers": [
+      { "@id": "http://www.contractor.novelins.com/woff184549377knitting" },
+      { "@id": "http://www.contractor.novelins.com/woff184549377glassblowing" }
+    ],
+    "http://xmlns.com/foaf/0.1/givenName": [
+      { "@value": "Keon", "@language": "en" }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      { "@value": "Mays", "@language": "en" }
+    ]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/184549378",
+    "@type": ["http://www.contractor.novelins.com/vocab#freelancer"],
+    "http://purl.org/goodrelations/v1#offers": [
+      { "@id": "http://www.contractor.novelins.com/woff184549378painting" },
+      { "@id": "http://www.contractor.novelins.com/woff184549378glassblowing" }
+    ],
+    "http://xmlns.com/foaf/0.1/givenName": [
+      { "@value": "Susan", "@language": "en" }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      { "@value": "Cline", "@language": "en" }
+    ]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/184549379",
+    "@type": ["http://www.contractor.novelins.com/vocab#freelancer"],
+    "http://purl.org/goodrelations/v1#offers": [
+      { "@id": "http://www.contractor.novelins.com/woff184549379smithing" }
+    ],
+    "http://xmlns.com/foaf/0.1/givenName": [
+      { "@value": "Casey", "@language": "en" }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      { "@value": "Maddox", "@language": "en" }
+    ]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/184549380",
+    "@type": ["http://www.contractor.novelins.com/vocab#freelancer"],
+    "http://purl.org/goodrelations/v1#offers": [
+      { "@id": "http://www.contractor.novelins.com/woff184549380knitting" }
+    ],
+    "http://xmlns.com/foaf/0.1/givenName": [
+      { "@value": "Ryker", "@language": "en" }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      { "@value": "Pratt", "@language": "en" }
+    ]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/184549381",
+    "@type": ["http://www.contractor.novelins.com/vocab#freelancer"],
+    "http://purl.org/goodrelations/v1#offers": [
+      { "@id": "http://www.contractor.novelins.com/woff184549381knitting" },
+      { "@id": "http://www.contractor.novelins.com/woff184549381painting" }
+    ],
+    "http://xmlns.com/foaf/0.1/givenName": [
+      { "@value": "Darien", "@language": "en" }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      { "@value": "Gill", "@language": "en" }
+    ]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/184549382",
+    "@type": ["http://www.contractor.novelins.com/vocab#freelancer"],
+    "http://purl.org/goodrelations/v1#offers": [
+      { "@id": "http://www.contractor.novelins.com/woff184549382knitting" },
+      { "@id": "http://www.contractor.novelins.com/woff184549382smithing" }
+    ],
+    "http://xmlns.com/foaf/0.1/givenName": [
+      { "@value": "Jaeden", "@language": "en" }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      { "@value": "Hancock", "@language": "en" }
+    ]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/184549383",
+    "@type": ["http://www.contractor.novelins.com/vocab#freelancer"],
+    "http://purl.org/goodrelations/v1#offers": [
+      { "@id": "http://www.contractor.novelins.com/woff184549383knitting" },
+      { "@id": "http://www.contractor.novelins.com/woff184549383painting" },
+      { "@id": "http://www.contractor.novelins.com/woff184549383smithing" },
+      { "@id": "http://www.contractor.novelins.com/woff184549383glassblowing" }
+    ],
+    "http://xmlns.com/foaf/0.1/givenName": [
+      { "@value": "Kinley", "@language": "en" }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      { "@value": "Tate", "@language": "en" }
+    ]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/184549384",
+    "@type": ["http://www.contractor.novelins.com/vocab#freelancer"],
+    "http://purl.org/goodrelations/v1#offers": [
+      { "@id": "http://www.contractor.novelins.com/woff184549384knitting" },
+      { "@id": "http://www.contractor.novelins.com/woff184549384painting" },
+      { "@id": "http://www.contractor.novelins.com/woff184549384smithing" },
+      { "@id": "http://www.contractor.novelins.com/woff184549384glassblowing" }
+    ],
+    "http://xmlns.com/foaf/0.1/givenName": [
+      { "@value": "Ibrahim", "@language": "en" }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      { "@value": "Maddox", "@language": "en" }
+    ]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/184549385",
+    "@type": ["http://www.contractor.novelins.com/vocab#freelancer"],
+    "http://purl.org/goodrelations/v1#offers": [
+      { "@id": "http://www.contractor.novelins.com/woff184549385glassblowing" }
+    ],
+    "http://xmlns.com/foaf/0.1/givenName": [
+      { "@value": "Giancarlo", "@language": "en" }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      { "@value": "Schwartz", "@language": "en" }
+    ]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/201326592",
+    "@type": ["http://purl.org/procurement/public-contracts#Contract"],
+    "http://purl.org/dc/terms/title": [
+      { "@value": "Sample contract #0", "@language": "en" }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@value": "Sample description for contract number 0",
+        "@language": "en"
+      }
+    ],
+    "http://purl.org/goodrelations/v1#category": [
+      { "@value": "glassblowing", "@language": "en" }
+    ]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/201326593",
+    "@type": ["http://purl.org/procurement/public-contracts#Contract"],
+    "http://purl.org/dc/terms/title": [
+      { "@value": "Sample contract #1", "@language": "en" }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@value": "Sample description for contract number 1",
+        "@language": "en"
+      }
+    ],
+    "http://purl.org/goodrelations/v1#category": [
+      { "@value": "smithing", "@language": "en" }
+    ]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/201326594",
+    "@type": ["http://purl.org/procurement/public-contracts#Contract"],
+    "http://purl.org/dc/terms/title": [
+      { "@value": "Sample contract #2", "@language": "en" }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@value": "Sample description for contract number 2",
+        "@language": "en"
+      }
+    ],
+    "http://purl.org/goodrelations/v1#category": [
+      { "@value": "smithing", "@language": "en" }
+    ]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/201326595",
+    "@type": ["http://purl.org/procurement/public-contracts#Contract"],
+    "http://purl.org/dc/terms/title": [
+      { "@value": "Sample contract #3", "@language": "en" }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@value": "Sample description for contract number 3",
+        "@language": "en"
+      }
+    ],
+    "http://purl.org/goodrelations/v1#category": [
+      { "@value": "painting", "@language": "en" }
+    ]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/201326596",
+    "@type": ["http://purl.org/procurement/public-contracts#Contract"],
+    "http://purl.org/dc/terms/title": [
+      { "@value": "Sample contract #4", "@language": "en" }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@value": "Sample description for contract number 4",
+        "@language": "en"
+      }
+    ],
+    "http://purl.org/goodrelations/v1#category": [
+      { "@value": "painting", "@language": "en" }
+    ]
+  },
+  { "@id": "http://www.contractor.novelins.com/vocab#customer" },
+  { "@id": "http://www.contractor.novelins.com/vocab#freelancer" },
+  { "@id": "http://www.contractor.novelins.com/vocab#wagedOffering" },
+  {
+    "@id": "http://www.contractor.novelins.com/woff184549376painting",
+    "@type": ["http://www.contractor.novelins.com/vocab#wagedOffering"],
+    "http://purl.org/goodrelations/v1#category": [
+      { "@value": "painting", "@language": "en" }
+    ],
+    "http://www.contractor.novelins.com/vocab#costsHourly": [{ "@value": 199 }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/woff184549377glassblowing",
+    "@type": ["http://www.contractor.novelins.com/vocab#wagedOffering"],
+    "http://purl.org/goodrelations/v1#category": [
+      { "@value": "glassblowing", "@language": "en" }
+    ],
+    "http://www.contractor.novelins.com/vocab#costsHourly": [{ "@value": 215 }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/woff184549377knitting",
+    "@type": ["http://www.contractor.novelins.com/vocab#wagedOffering"],
+    "http://purl.org/goodrelations/v1#category": [
+      { "@value": "knitting", "@language": "en" }
+    ],
+    "http://www.contractor.novelins.com/vocab#costsHourly": [{ "@value": 215 }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/woff184549378glassblowing",
+    "@type": ["http://www.contractor.novelins.com/vocab#wagedOffering"],
+    "http://purl.org/goodrelations/v1#category": [
+      { "@value": "glassblowing", "@language": "en" }
+    ],
+    "http://www.contractor.novelins.com/vocab#costsHourly": [{ "@value": 220 }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/woff184549378painting",
+    "@type": ["http://www.contractor.novelins.com/vocab#wagedOffering"],
+    "http://purl.org/goodrelations/v1#category": [
+      { "@value": "painting", "@language": "en" }
+    ],
+    "http://www.contractor.novelins.com/vocab#costsHourly": [{ "@value": 220 }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/woff184549379smithing",
+    "@type": ["http://www.contractor.novelins.com/vocab#wagedOffering"],
+    "http://purl.org/goodrelations/v1#category": [
+      { "@value": "smithing", "@language": "en" }
+    ],
+    "http://www.contractor.novelins.com/vocab#costsHourly": [{ "@value": 400 }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/woff184549380knitting",
+    "@type": ["http://www.contractor.novelins.com/vocab#wagedOffering"],
+    "http://purl.org/goodrelations/v1#category": [
+      { "@value": "knitting", "@language": "en" }
+    ],
+    "http://www.contractor.novelins.com/vocab#costsHourly": [{ "@value": 277 }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/woff184549381knitting",
+    "@type": ["http://www.contractor.novelins.com/vocab#wagedOffering"],
+    "http://purl.org/goodrelations/v1#category": [
+      { "@value": "knitting", "@language": "en" }
+    ],
+    "http://www.contractor.novelins.com/vocab#costsHourly": [{ "@value": 243 }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/woff184549381painting",
+    "@type": ["http://www.contractor.novelins.com/vocab#wagedOffering"],
+    "http://purl.org/goodrelations/v1#category": [
+      { "@value": "painting", "@language": "en" }
+    ],
+    "http://www.contractor.novelins.com/vocab#costsHourly": [{ "@value": 243 }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/woff184549382knitting",
+    "@type": ["http://www.contractor.novelins.com/vocab#wagedOffering"],
+    "http://purl.org/goodrelations/v1#category": [
+      { "@value": "knitting", "@language": "en" }
+    ],
+    "http://www.contractor.novelins.com/vocab#costsHourly": [{ "@value": 342 }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/woff184549382smithing",
+    "@type": ["http://www.contractor.novelins.com/vocab#wagedOffering"],
+    "http://purl.org/goodrelations/v1#category": [
+      { "@value": "smithing", "@language": "en" }
+    ],
+    "http://www.contractor.novelins.com/vocab#costsHourly": [{ "@value": 342 }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/woff184549383glassblowing",
+    "@type": ["http://www.contractor.novelins.com/vocab#wagedOffering"],
+    "http://purl.org/goodrelations/v1#category": [
+      { "@value": "glassblowing", "@language": "en" }
+    ],
+    "http://www.contractor.novelins.com/vocab#costsHourly": [{ "@value": 228 }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/woff184549383knitting",
+    "@type": ["http://www.contractor.novelins.com/vocab#wagedOffering"],
+    "http://purl.org/goodrelations/v1#category": [
+      { "@value": "knitting", "@language": "en" }
+    ],
+    "http://www.contractor.novelins.com/vocab#costsHourly": [{ "@value": 228 }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/woff184549383painting",
+    "@type": ["http://www.contractor.novelins.com/vocab#wagedOffering"],
+    "http://purl.org/goodrelations/v1#category": [
+      { "@value": "painting", "@language": "en" }
+    ],
+    "http://www.contractor.novelins.com/vocab#costsHourly": [{ "@value": 228 }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/woff184549383smithing",
+    "@type": ["http://www.contractor.novelins.com/vocab#wagedOffering"],
+    "http://purl.org/goodrelations/v1#category": [
+      { "@value": "smithing", "@language": "en" }
+    ],
+    "http://www.contractor.novelins.com/vocab#costsHourly": [{ "@value": 228 }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/woff184549384glassblowing",
+    "@type": ["http://www.contractor.novelins.com/vocab#wagedOffering"],
+    "http://purl.org/goodrelations/v1#category": [
+      { "@value": "glassblowing", "@language": "en" }
+    ],
+    "http://www.contractor.novelins.com/vocab#costsHourly": [{ "@value": 420 }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/woff184549384knitting",
+    "@type": ["http://www.contractor.novelins.com/vocab#wagedOffering"],
+    "http://purl.org/goodrelations/v1#category": [
+      { "@value": "knitting", "@language": "en" }
+    ],
+    "http://www.contractor.novelins.com/vocab#costsHourly": [{ "@value": 420 }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/woff184549384painting",
+    "@type": ["http://www.contractor.novelins.com/vocab#wagedOffering"],
+    "http://purl.org/goodrelations/v1#category": [
+      { "@value": "painting", "@language": "en" }
+    ],
+    "http://www.contractor.novelins.com/vocab#costsHourly": [{ "@value": 420 }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/woff184549384smithing",
+    "@type": ["http://www.contractor.novelins.com/vocab#wagedOffering"],
+    "http://purl.org/goodrelations/v1#category": [
+      { "@value": "smithing", "@language": "en" }
+    ],
+    "http://www.contractor.novelins.com/vocab#costsHourly": [{ "@value": 420 }]
+  },
+  {
+    "@id": "http://www.contractor.novelins.com/woff184549385glassblowing",
+    "@type": ["http://www.contractor.novelins.com/vocab#wagedOffering"],
+    "http://purl.org/goodrelations/v1#category": [
+      { "@value": "glassblowing", "@language": "en" }
+    ],
+    "http://www.contractor.novelins.com/vocab#costsHourly": [{ "@value": 209 }]
+  }
+]
